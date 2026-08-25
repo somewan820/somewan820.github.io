@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="万沁宇在 Apache Maka 与 OpenPI 的开源贡献。" />
+    <title>万沁宇 - 开源经历</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="resume-book" aria-label="万沁宇开源经历">
+      <article class="resume-page open-source-page">
+        <header class="profile-header open-source-header">
+          <h1><a href="https://github.com/somewan820" target="_blank" rel="noreferrer">somewan820</a> 活跃分析</h1>
+          <p class="headline">Apache Maka · OpenPI</p>
+          <p class="identity-row">
+            <a class="back-button" href="./index.html"><span aria-hidden="true">←</span> 返回简历</a>
+          </p>
+        </header>
+
+        <section class="resume-section open-source-section">
+          <h2><a href="https://github.com/apache/maka" target="_blank" rel="noreferrer">Apache Maka（Incubating）</a></h2>
+          <div class="project-brief">
+            <p><strong>项目概述：</strong>Apache 孵化中的本地优先 AI Agent 工作台，以 Runtime Event Log 统一记录模型、工具、权限与终止事件。</p>
+          </div>
+
+          <div class="source-group">
+            <h3>重要 PR</h3>
+            <ul class="source-list">
+              <li>
+                <a href="https://github.com/apache/maka/pull/3028" target="_blank" rel="noreferrer">#3028</a>
+                <strong>Work Board 核心契约与存储</strong>
+                <span>Core / SQLite Store、revision CAS、游标分页、事务串行化。</span>
+              </li>
+              <li>
+                <a href="https://github.com/apache/maka/pull/3135" target="_blank" rel="noreferrer">#3135</a>
+                <strong>Work Board Desktop MVP</strong>
+                <span>主进程存储权威、IPC 投影与完整事项操作。</span>
+              </li>
+              <li>
+                <a href="https://github.com/apache/maka/pull/3165" target="_blank" rel="noreferrer">#3165</a>
+                <strong>Session Catalog 协议与存储重构</strong>
+                <span>清理无效过滤与冗余表，完成 schema v26 迁移及兼容性升级。</span>
+              </li>
+              <li>
+                <span class="source-links"><a href="https://github.com/apache/maka/pull/567" target="_blank" rel="noreferrer">#567</a> / <a href="https://github.com/apache/maka/pull/956" target="_blank" rel="noreferrer">#956</a></span>
+                <strong>Task Ledger 演进</strong>
+                <span>持久生命周期事件、层级任务与子 Agent 关联。</span>
+              </li>
+              <li>
+                <a href="https://github.com/apache/maka/pull/3751" target="_blank" rel="noreferrer">#3751</a>
+                <strong>Runtime 异常恢复</strong>
+                <span>限制 malformed compaction 重试并传递可操作的恢复信息。</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="source-group">
+            <h3>重要 Issue</h3>
+            <ul class="source-list">
+              <li>
+                <a href="https://github.com/apache/maka/issues/559" target="_blank" rel="noreferrer">#559</a>
+                <strong>Durable Task Lifecycle RFC</strong>
+                <span>提出持久任务生命周期与证据模型。</span>
+              </li>
+              <li>
+                <a href="https://github.com/apache/maka/issues/883" target="_blank" rel="noreferrer">#883</a>
+                <strong>层级任务与子 Agent 协作</strong>
+                <span>提出任务层级、协作关联和可视化方案。</span>
+              </li>
+              <li>
+                <a href="https://github.com/apache/maka/issues/3726" target="_blank" rel="noreferrer">#3726</a>
+                <strong>外部条件驱动的 Session Follow-up</strong>
+                <span>讨论外部事件触发、幂等续接与权限边界。</span>
+              </li>
+              <li>
+                <a href="https://github.com/apache/maka/issues/3743" target="_blank" rel="noreferrer">#3743</a>
+                <strong>异常压缩摘要导致 Session 阻塞</strong>
+                <span>完成问题定位并通过 PR #3751 推进修复。</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="resume-section open-source-section">
+          <h2><a href="https://github.com/tt-a1i/openpi" target="_blank" rel="noreferrer">OpenPI</a></h2>
+          <div class="project-brief">
+            <p><strong>项目概述：</strong>基于 Pi 的 Agent 开发配置项目，通过工作流和扩展机制组织子任务、会话事件与开发工具。</p>
+          </div>
+
+          <div class="source-group compact-source-group">
+            <h3>重要贡献</h3>
+            <ul class="source-list">
+              <li>
+                <a href="https://github.com/tt-a1i/openpi/pull/146" target="_blank" rel="noreferrer">PR #146</a>
+                <strong>Workflow 响应完整性修复</strong>
+                <span>要求子任务产生 assistant settlement 后才能返回成功，避免空输出被误判为成功。</span>
+              </li>
+              <li>
+                <a href="https://github.com/tt-a1i/openpi/issues/115" target="_blank" rel="noreferrer">Issue #115</a>
+                <strong>Schema-less Workflow 空响应</strong>
+                <span>围绕该问题完成复现、生命周期边界分析与测试闭环。</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="resume-section open-source-section">
+          <h2>技术总结</h2>
+          <ul class="technical-summary">
+            <li><strong>Agent Runtime：</strong>状态机、事件生命周期、Checkpoint 恢复、重试边界与错误传播。</li>
+            <li><strong>本地优先架构：</strong>主进程存储权威、IPC 投影、SQLite 事务、CAS 并发控制与游标分页。</li>
+            <li><strong>协议与迁移：</strong>跨层契约演进、兼容性 epoch、数据库 schema 迁移与旧能力收敛。</li>
+            <li><strong>工程质量：</strong>从 Issue 复现和边界分析，到实现、回归测试与 PR 评审闭环。</li>
+          </ul>
+        </section>
+      </article>
+    </main>
+  </body>
+</html>

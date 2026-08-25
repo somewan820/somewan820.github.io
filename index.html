@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="zh-CN" data-export-width="1122">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>万沁宇 - Agent 简历</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="resume-book" aria-label="万沁宇个人简历">
+      <article class="resume-page">
+        <header class="profile-header">
+          <h1>万沁宇</h1>
+          <p class="contact-row"><a href="mailto:somewanq2@gmail.com">somewanq2@gmail.com</a></p>
+          <p class="headline">Agent · Java / Go 后端 · LLM 应用 · Apache 开源贡献者</p>
+          <p class="identity-row">
+            <a href="https://github.com/somewan820" target="_blank" rel="noreferrer">github.com/somewan820</a>
+            <span aria-hidden="true">　|　</span>
+            <a href="./github.html">开源分析</a>
+          </p>
+          <p class="education-row">深圳大学　计算机科学与技术（卓越班）本科｜2023.09 - 至今</p>
+        </header>
+
+        <section class="resume-section">
+          <h2>实习经历</h2>
+          <p class="section-lead">鹅同学面向真实身份网络构建 AI 职业社交平台，围绕用户名片、圈子与活动沉淀社交关系，并通过 Agent 帮助用户找人、找圈和发现机会。</p>
+
+          <article class="role-card role-card-etongxue">
+            <div class="role-heading">
+              <span class="logo-chip"><img src="./assets/logos/etongxue-logo.png" alt="鹅同学 Logo" /></span>
+              <strong>鹅同学 · Agent 研发实习生</strong>
+              <span>2025.08 - 至今</span>
+            </div>
+
+            <div class="project-block">
+              <h3>核心业务微服务｜账号、用户、圈子与活动</h3>
+              <p class="tech-line">Java 21 · Spring Boot · RPC · MySQL · Redis</p>
+              <ul>
+                <li><strong>业务域开发：</strong>负责账号、用户、圈子与活动等业务域开发，完成公共 RPC 契约、领域服务及 Gateway / Web 接口的跨项目联动，交付完整业务链路。</li>
+                <li><strong>账号安全：</strong>完成手机号/邮箱验证码、密码登录、微信手机号绑定及敏感操作二次校验；基于 SHA-256、时间窗口、nonce 与 Redis 原子写入实现请求验签和防重放。</li>
+                <li><strong>活动链路：</strong>负责活动创建、动态表单、报名审核、成员管理及签到等业务链路；通过数据库事务、提交后缓存失效和异步任务协调跨服务状态，并使用游标分页支撑列表查询。</li>
+              </ul>
+            </div>
+
+            <div class="project-block">
+              <h3>用户推荐系统｜向量召回 + LLM 重排</h3>
+              <p class="tech-line">Go · VikingDB · LLM · RabbitMQ</p>
+              <ul>
+                <li><strong>召回与重排：</strong>基于 VikingDB 实现用户画像向量存储与召回，接入 Kimi K2、DeepSeek V3 完成特征语义增强、候选结果重排和推荐理由生成，构建「向量召回 + LLM 重排」的两阶段推荐链路。</li>
+                <li><strong>异步解耦：</strong>基于 RabbitMQ 串联画像索引更新、推荐计算与评分任务，将耗时的模型与向量处理从主链路解耦，并协同 MySQL、Redis 与 VikingDB 维护业务数据和索引状态。</li>
+              </ul>
+            </div>
+
+            <div class="project-block">
+              <h3>社交 Agent 编排服务｜有状态流程编排</h3>
+              <p class="tech-line">TypeScript · LangGraph · Redis · SSE</p>
+              <ul>
+                <li><strong>主链路：</strong>参与基于 LangGraph 的有状态 Agent 编排服务开发，构建「指令识别、账号状态获取、业务 Agent 分发」主链路，按用户状态路由 Onboarding 与主 Agent，覆盖意图采集、名片完善、用户/圈子匹配及洞察，并接入 12 个结构化业务工具。</li>
+                <li><strong>中断与恢复：</strong>基于 interrupt / Command 与 Redis Checkpoint 实现多轮流程的中断、持久化与恢复，处理陈旧检查点及非法恢复请求；通过 Elysia + SSE 统一输出 token、thinking、结构化 UI、interrupt 和 error 事件，并引入历史回灌、摘要记忆及工具可观测中间件。</li>
+              </ul>
+            </div>
+          </article>
+        </section>
+
+        <section class="resume-section">
+          <h2>项目经历</h2>
+
+          <article class="feature-project">
+            <h3><a href="https://github.com/apache/maka">Apache Maka（Incubating）· github.com/apache/maka</a><span>Apache Incubating</span></h3>
+            <p class="project-meta">2026.06 - 至今 · Apache 开源贡献者 · 16 个 PR 已合并</p>
+            <p class="project-intro">Maka 是 Apache 软件基金会旗下本地优先、日志驱动的 AI Agent 工作台，通过 Runtime Host 统一 Desktop、TUI、CLI 与 Headless 执行，并将会话、上下文和恢复构建为 Runtime Event Log 的投影。</p>
+            <ul>
+              <li><strong>Work Board 核心能力：</strong>设计并落地 Core / SQLite 契约与持久化 Store，以严格输入校验、事务串行化、revision CAS、游标分页和局部索引保证并发一致性与可扩展查询（#3028，已合并）；实现 Desktop 主进程单一存储权威、渲染层 IPC 投影及完整事项操作（#3135，已合并）。</li>
+              <li><strong>协议与存储重构：</strong>移除 Session Catalog 中无生产调用的归档、标记与标签过滤，贯穿 Runtime Host 协议、Coordinator、Desktop IPC 与 SQLite 查询；新增 schema v26 迁移清理冗余表和索引，并将兼容性 epoch 提升至 24，确保 breaking wire contract 安全握手（#3165，已合并）。</li>
+              <li><strong>Task Ledger 演进与收敛设计：</strong>参与 durable lifecycle events、严格状态/证据校验、层级任务、子 Agent 关联与只读任务面板建设（#567、#956）；在项目准备移除旧 Task Ledger、收敛至更轻量的 SessionTodo / Work Board 边界时，参与 RFC #2290 的 authority-first 分析，梳理可保留能力、迁移原则与恢复信号。</li>
+            </ul>
+          </article>
+        </section>
+
+        <section class="resume-section compact-section">
+          <h2>专业技能</h2>
+          <ul class="closing-list">
+            <li><strong>后端工程：</strong>熟悉 Java、Go，具备微服务开发经验，掌握并发编程、RPC 接口设计、事务编排、游标分页、缓存更新及异步任务等工程能力。</li>
+            <li><strong>数据与中间件：</strong>熟悉 MySQL、Redis，掌握事务、索引、锁及缓存一致性；具有 RabbitMQ 异步消息与 VikingDB 向量检索实践经验。</li>
+            <li><strong>LLM 应用与 Agent：</strong>熟悉语义增强、向量召回、LLM 重排、工具调用及有状态流程编排；熟练使用 Codex 等编码 Agent 完成代码理解、代码修改与开发辅助。</li>
+          </ul>
+        </section>
+
+        <section class="resume-section compact-section">
+          <h2>其他</h2>
+          <ul class="closing-list">
+            <li><strong>英语水平：</strong>CET-4，能够阅读英文技术文档并参与英文开源项目协作。</li>
+            <li><strong>GitHub：</strong><a href="https://github.com/somewan820" target="_blank" rel="noreferrer">github.com/somewan820</a></li>
+          </ul>
+        </section>
+      </article>
+    </main>
+  </body>
+</html>
